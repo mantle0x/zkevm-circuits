@@ -39,7 +39,7 @@ A transaction can be contract creation or message call. For contract creation, `
 
 ### Types of Transactions
 
-Besides legacy transation, there are also other types of transactions such as [EIP155], [EIP2930] ([EIP2718] type `0x01`) and [EIP1559] ([EIP2718] type `0x02`). They differ by their details in tx information and their signing process. 
+Besides legacy transaction, there are also other types of transactions such as [EIP155], [EIP2930] ([EIP2718] type `0x01`) and [EIP1559] ([EIP2718] type `0x02`). They differ by their details in tx information and their signing process. 
 
 For example, in the above legacy transaction the ECDSA signature `(r,s)` is obtained by signing with message `RLP([nonce, gasprice, startgas, to, value, data])` and the private key of the EOA account that initiates this tx. In this case `v` is 27 or 28; instead, in EIP155 the sign message becomes `RLP([nonce, gasprice, startgas, to, value, data, chainid, 0, 0])` and `v` is `ChainID*2+35` or `ChainID*2+36`. 
 
